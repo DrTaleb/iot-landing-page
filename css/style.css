@@ -39,6 +39,9 @@
 .bg-light-purple{
     background-color: var(--my-light-purple);
 }
+.color-my-purple{
+    color: var(--my-purple)!important;
+}
 html body{
     font-family: IRANSans;
     background-color: var(--my-light);
@@ -76,4 +79,24 @@ html body{
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
+}
+
+.back-top {
+    width: 55px;
+    height: 55px;
+    border-radius: 60px;
+    color:  var(--my-light-purple) ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--my-purple);
+    left: 45px
+}
+.back-top-section{
+    cursor: pointer;
+    width: fit-content;
+    backdrop-filter: blur(10px);
+    right: 70px;
+    bottom: 70px;
 }

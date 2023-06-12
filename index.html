@@ -19,15 +19,16 @@
 </head>
 <body>
 <main>
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img width="110px" src="./img/main-paya360-logo%20(1).webp">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler border-0 shadow-sm" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon color-my-purple"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -47,7 +48,7 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <button class="btn btn-outline-success" type="submit">root</button>
+                    <button class="btn my-btn-purple" type="submit">root</button>
                 </div>
             </div>
         </div>
@@ -843,7 +844,27 @@
             <!--            پایان دایو سالن۲ -->
         </div>
     </section>
+    <div class="fixed-bottom back-top-section p-2 rounded-5" onclick="backtotop()">
+        <div class="back-top shadow mb-2">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
+        <span>برو به بالا</span>
+    </div>
+    <script>
+        function backtotop() {
+            window.scrollTo(0, 0);
+        }
+
+        window.onscroll = function () {
+            if (pageYOffset > 100) {
+                $(".back-top-section").show()
+            } else {
+                $(".back-top-section").hide(200)
+            }
+        };
+    </script>
 </main>
+
 
 
 </body>
