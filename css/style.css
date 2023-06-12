@@ -1,0 +1,79 @@
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../font/iransans/woff/IRANSansWeb_Bold.woff') format('woff'); /* All Major Browsers */
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../font/iransans/woff/IRANSansWeb_Medium.woff') format('woff'); /* All Major Browsers */
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../font/iransans/woff/IRANSansWeb_Light.woff') format('woff'); /* All Major Browsers */
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../font/iransans/woff/IRANSansWeb_UltraLight.woff') format('woff'); /* All Major Browsers */
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/iransans/woff/IRANSansWeb.woff') format('woff'); /* All Major Browsers */
+}
+:root {
+    --my-light: #f6f9fa;
+    --my-blue: #03bbf9;
+    --my-light-purple: #eeeaff;
+    --my-purple: #4a2aff;
+    --my-light-blue: #e2f8fc;
+    --white : #fff
+}
+.bg-light-purple{
+    background-color: var(--my-light-purple);
+}
+html body{
+    font-family: IRANSans;
+    background-color: var(--my-light);
+}
+.statistic-card{
+    background-color: var(--white);
+    width: 100%;
+    box-shadow: 0 0 .6rem rgba(0,0,0,.1)!important;
+    transition: .6s;
+}
+@media (min-width: 768px) {
+    .statistic-card{
+        background-color: var(--white);
+        width: 47%;
+        box-shadow: 0 0 .6rem rgba(0,0,0,.1)!important;
+        transition: .6s;
+    }
+}
+.statistic-card:hover{
+    box-shadow: 0 0 1rem rgba(0,0,0,.1)!important;
+}
+
+.my-btn-purple {
+    --bs-btn-color: var(--my-purple);
+    --bs-btn-bg: var(--my-light-purple);
+    --bs-btn-border-color: var(--my-light-purple);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--my-light-purple);
+    --bs-btn-hover-border-color: var(--my-light-purple);
+    --bs-btn-focus-shadow-rgb: var(--my-light-purple);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #565e64;
+    --bs-btn-active-border-color: #51585e;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6c757d;
+    --bs-btn-disabled-border-color: #6c757d;
+}

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--    bootstrap rtl v5.2.0-->
+    <link rel="stylesheet" href="./css/bootstrap.rtl.css"/>
+    <!--    apex chart-->
+    <link rel="stylesheet" href="./plugin/apex-charts/apexcharts.css">
+    <!--    custom styles -->
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!--    scripts-->
+    <script rel="script" src="./js/jquery-3.6.1.min.js"></script>
+    <script rel="script" src="./js/bootstrap.bundle.min.js"></script>
+    <script rel="script" src="./plugin/apex-charts/apexcharts.js"></script>
+</head>
+<body>
+<main>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img width="110px" src="./img/main-paya360-logo%20(1).webp">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">منو</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            منوی باز شونده
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-success" type="submit">root</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="container">
+        <div class="statistic-cards-section d-flex flex-row flex-wrap gap-3 justify-content-around mt-4">
+            <!--            برای داشتن چند کارد با جداول مجزا باید هر تگ دایو با کلاس statistic-card و
+             تک اسکریپت زیر آنرا کپی نموده و نام متغیر ها و چارت ها را داخل تگ اسکریپت و دایو های داخلی تغییر دهید  -->
+
+            <!--            هر دایو و اسکریپت برای یک سالن -->
+            <div class="statistic-card d-flex flex-column gap-4 rounded-4 p-3">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                <span class="text-secondary border-start border-3 ps-3">
+                    سالن شماره یک
+                </span>
+                    <a href="#" class="btn my-btn-purple">
+                        ورود به داشبورد
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap flex-row gap-2 justify-content-around">
+                    <div class="col-lg col-12 d-flex flex-column gap-3 shadow-sm rounded-3 py-2 px-2">
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <small class="text-secondary">
+                                سرعت درایو
+                            </small>
+                            <div class="px-2 py-1 bg-light-purple rounded-3">
+                                <img height="13" src="./img/home-icon.svg"/>
+                            </div>
+                        </div>
+                        <span>
+                            4
+                        </span>
+                    </div>
+                    <div class="col-lg col-12 d-flex flex-column gap-3 shadow-sm rounded-3 py-2 px-2">
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <small class="text-secondary">
+                                آخرین آپدیت
+                            </small>
+                            <div class="px-2 py-1 bg-light-purple rounded-3">
+                                <img height="13" src="./img/home-icon.svg"/>
+                            </div>
+                        </div>
+                        <span>
+                            4
+                        </span>
+                    </div>
+                    <div class="col-lg col-12 d-flex flex-column gap-3 shadow-sm rounded-3 py-2 px-2">
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <small class="text-secondary">
+                                TL
+                            </small>
+                            <div class="px-2 py-1 bg-light-purple rounded-3">
+                                <img height="13" src="./img/home-icon.svg"/>
+                            </div>
+                        </div>
+                        <span>
+                            4
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row flex-wrap justify-content-around align-items-center">
+                    <div class="col-6 col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div id="maxCompostHeat1" class="w-100"></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div id="minCompostHeat1" class="w-100"></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div id="environmentHeat1" class="w-100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainChart1"></div>
+            </div>
+            <!--            این تگ اسکریپت شامل کانفیگ چارت های این کارد است-->
+            <script>
+
+                var mainChartOptions1 = {
+                    series: [{
+                        name: 'هوا',
+                        data: [31, 40, 28, 51, 42, 109, 100]
+                    }, {
+                        name: 'دمای کمپوست بالا',
+                        data: [11, 32, 45, 32, 34, 52, 41],
+                    }, {
+                        name: 'دمای کمپوست پایین',
+                        data: [11, 20, 20, 32, 4, 5, 41],
+                    }, {
+                        name: 'مورد اضافه',
+                        data: [1, 200, 20, 32, 4, 5, 41],
+                    }]
+                    ,
+                    chart: {
+                        height: 300,
+                        type: 'area',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+                    markers: {
+                        size: 3
+                    },
+                    legend: {
+                        position: 'bottom',
+                        horizontalAlign: 'left',
+                        fontFamily: "IRANSans",
+                        markers: {
+                            width: 12,
+                            height: 12,
+                            strokeWidth: 0,
+                            strokeColor: '#fff',
+                            fillColors: undefined,
+                            radius: 12,
+                            customHTML: undefined,
+                            onClick: undefined,
+                            offsetX: 5,
+                        },
+                        itemMargin: {
+                            horizontal: 10,
+                            vertical: 10
+                        },
+                    },
+                    colors: ['#45cb85', '#03bbf9', "#4a2aff"],
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        curve: 'smooth',
+                        width: 1
+                    },
+
+                    xaxis: {
+                        type: 'datetime',
+                        categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                    },
+                    tooltip: {
+                        x: {
+                            format: 'dd/MM/yy HH:mm'
+                        },
+                    },
+                };
+                var maximumCompostHeatOptions1 = {
+                    series: [30],
+                    chart: {
+                        height: 180,
+                        type: 'radialBar',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+
+                    plotOptions: {
+                        radialBar: {
+                            startAngle: -90,
+                            endAngle: 90,
+                            hollow: {
+                                margin: 0,
+                                size: '70%',
+                                background: '#fff',
+                                image: undefined,
+                                imageOffsetX: 0,
+                                imageOffsetY: 0,
+                                position: 'front',
+                                dropShadow: {
+                                    enabled: true,
+                                    top: 3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.24
+                                }
+                            },
+                            track: {
+                                background: '#fff',
+                                strokeWidth: '67%',
+                                margin: 0, // margin is in pixels
+                                dropShadow: {
+                                    enabled: true,
+                                    top: -3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.35
+                                }
+                            },
+
+                            dataLabels: {
+                                show: true,
+                                name: {
+                                    fontFamily: "IRANSans",
+                                    show: true,
+                                    color: '#888',
+                                    fontSize: '10px',
+                                },
+                                value: {
+                                    formatter: function (val) {
+                                        return parseInt(val);
+                                    },
+                                    color: '#111',
+                                    fontSize: '20px',
+                                    show: true,
+                                }
+                            }
+                        }
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'dark',
+                            type: 'horizontal',
+                            shadeIntensity: 0.5,
+                            gradientToColors: ['#ABE5A1'],
+                            inverseColors: true,
+                            opacityFrom: 1,
+                            opacityTo: 1,
+                            stops: [0, 100]
+                        }
+                    },
+                    stroke: {
+                        lineCap: 'round'
+                    },
+                    labels: ['دمای بیشینه کمپوست'],
+                };
+
+                var minimumCompostHeatOptions1 = {
+                    series: [100],
+                    chart: {
+                        height: 180,
+                        type: 'radialBar',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+
+                    plotOptions: {
+                        radialBar: {
+                            startAngle: -90,
+                            endAngle: 90,
+                            hollow: {
+                                margin: 0,
+                                size: '70%',
+                                background: '#fff',
+                                image: undefined,
+                                imageOffsetX: 0,
+                                imageOffsetY: 0,
+                                position: 'front',
+                                dropShadow: {
+                                    enabled: true,
+                                    top: 3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.24
+                                }
+                            },
+                            track: {
+                                background: '#fff',
+                                strokeWidth: '67%',
+                                margin: 0, // margin is in pixels
+                                dropShadow: {
+                                    enabled: true,
+                                    top: -3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.35
+                                }
+                            },
+
+                            dataLabels: {
+                                show: true,
+                                name: {
+                                    fontFamily: "IRANSans",
+                                    show: true,
+                                    color: '#888',
+                                    fontSize: '10px',
+                                },
+                                value: {
+                                    formatter: function (val) {
+                                        return parseInt(val);
+                                    },
+                                    color: '#111',
+                                    fontSize: '20px',
+                                    show: true,
+                                }
+                            }
+                        }
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'dark',
+                            type: 'horizontal',
+                            shadeIntensity: 0.5,
+                            gradientToColors: ['#ABE5A1'],
+                            inverseColors: true,
+                            opacityFrom: 1,
+                            opacityTo: 1,
+                            stops: [0, 100]
+                        }
+                    },
+                    stroke: {
+                        lineCap: 'round'
+                    },
+                    labels: ['دمای کمینه کمپوست'],
+                };
+
+                var environmentHeatOptions1 = {
+                    series: [100],
+                    chart: {
+                        height: 180,
+                        type: 'radialBar',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+
+                    plotOptions: {
+                        radialBar: {
+                            startAngle: -90,
+                            endAngle: 90,
+                            hollow: {
+                                margin: 0,
+                                size: '70%',
+                                background: '#fff',
+                                image: undefined,
+                                imageOffsetX: 0,
+                                imageOffsetY: 0,
+                                position: 'front',
+                                dropShadow: {
+                                    enabled: true,
+                                    top: 3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.24
+                                }
+                            },
+                            track: {
+                                background: '#fff',
+                                strokeWidth: '67%',
+                                margin: 0, // margin is in pixels
+                                dropShadow: {
+                                    enabled: true,
+                                    top: -3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.35
+                                }
+                            },
+
+                            dataLabels: {
+                                show: true,
+                                name: {
+                                    fontFamily: "IRANSans",
+                                    show: true,
+                                    color: '#888',
+                                    fontSize: '13px',
+                                },
+                                value: {
+                                    formatter: function (val) {
+                                        return parseInt(val);
+                                    },
+                                    color: '#111',
+                                    fontSize: '20px',
+                                    show: true,
+                                }
+                            }
+                        }
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'dark',
+                            type: 'horizontal',
+                            shadeIntensity: 0.5,
+                            gradientToColors: ['#ABE5A1'],
+                            inverseColors: true,
+                            opacityFrom: 1,
+                            opacityTo: 1,
+                            stops: [0, 100]
+                        }
+                    },
+                    stroke: {
+                        lineCap: 'round'
+                    },
+                    labels: ['دمای محیط'],
+                };
+
+                var environmentHeat1 = new ApexCharts(document.querySelector("#environmentHeat1"), environmentHeatOptions1);
+                environmentHeat1.render();
+                var maximumCompostHeatChart1 = new ApexCharts(document.querySelector("#maxCompostHeat1"), maximumCompostHeatOptions1);
+                maximumCompostHeatChart1.render();
+                var minimumCompostHeatChart1 = new ApexCharts(document.querySelector("#minCompostHeat1"), minimumCompostHeatOptions1);
+                minimumCompostHeatChart1.render();
+                var mainChart1 = new ApexCharts(document.querySelector("#mainChart1"), mainChartOptions1);
+                mainChart1.render();
+            </script>
+            <!--            پایان اسکریپت سالن ۱-->
+            <!--            پایان دایو سالن ۱-->
+
+
+            <!--            سالن دو-->
+            <div class="statistic-card d-flex flex-column gap-4 rounded-4 p-3">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                <span class="text-secondary border-start border-3 ps-3">
+                    سالن شماره دو
+                </span>
+                    <a href="#" class="btn my-btn-purple">
+                        ورود به داشبورد
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap flex-row gap-2 justify-content-around">
+                    <div class="col-lg ol-12 d-flex flex-column gap-3 shadow-sm rounded-3 py-2 px-2">
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <small class="text-secondary">
+                                سرعت درایو
+                            </small>
+                            <div class="px-2 py-1 bg-light-purple rounded-3">
+                                <img height="13" src="./img/home-icon.svg"/>
+                            </div>
+                        </div>
+                        <span>
+                            4
+                        </span>
+                    </div>
+                    <div class="col-lg col-12 d-flex flex-column gap-3 shadow-sm rounded-3 py-2 px-2">
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <small class="text-secondary">
+                                آخرین آپدیت
+                            </small>
+                            <div class="px-2 py-1 bg-light-purple rounded-3">
+                                <img height="13" src="./img/home-icon.svg"/>
+                            </div>
+                        </div>
+                        <span>
+                            4
+                        </span>
+                    </div>
+                    <div class="col-lg col-12 d-flex flex-column gap-3 shadow-sm rounded-3 py-2 px-2">
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <small class="text-secondary">
+                                TL
+                            </small>
+                            <div class="px-2 py-1 bg-light-purple rounded-3">
+                                <img height="13" src="./img/home-icon.svg"/>
+                            </div>
+                        </div>
+                        <span>
+                            4
+                        </span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row flex-wrap justify-content-around align-items-center">
+                    <div class="col-6 col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div id="maxCompostHeat2" class="w-100"></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div id="minCompostHeat2" class="w-100"></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div id="environmentHeat2" class="w-100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainChart2"></div>
+            </div>
+            <!--            این تگ اسکریپت شامل کانفیگ چارت های این کارد است-->
+            <script>
+
+                var mainChartOptions2 = {
+                    series: [{
+                        name: 'هوا',
+                        data: [31, 40, 28, 51, 42, 109, 100]
+                    }, {
+                        name: 'دمای کمپوست بالا',
+                        data: [11, 32, 45, 32, 34, 52, 41],
+                    }, {
+                        name: 'دمای کمپوست پایین',
+                        data: [11, 20, 20, 32, 4, 5, 41],
+                    }, {
+                        name: 'مورد اضافه',
+                        data: [1, 200, 20, 32, 4, 5, 41],
+                    }]
+                    ,
+                    chart: {
+                        height: 300,
+                        type: 'area',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+                    markers: {
+                        size: 3
+                    },
+                    legend: {
+                        position: 'bottom',
+                        horizontalAlign: 'left',
+                        fontFamily: "IRANSans",
+                        markers: {
+                            width: 12,
+                            height: 12,
+                            strokeWidth: 0,
+                            strokeColor: '#fff',
+                            fillColors: undefined,
+                            radius: 12,
+                            customHTML: undefined,
+                            onClick: undefined,
+                            offsetX: 5,
+                        },
+                        itemMargin: {
+                            horizontal: 10,
+                            vertical: 10
+                        },
+                    },
+                    colors: ['#45cb85', '#03bbf9', "#4a2aff"],
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        curve: 'smooth',
+                        width: 1
+                    },
+
+                    xaxis: {
+                        type: 'datetime',
+                        categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                    },
+                    tooltip: {
+                        x: {
+                            format: 'dd/MM/yy HH:mm'
+                        },
+                    },
+                };
+                var maximumCompostHeatOptions2 = {
+                    series: [200],
+                    chart: {
+                        height: 180,
+                        type: 'radialBar',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+
+                    plotOptions: {
+                        radialBar: {
+                            startAngle: -90,
+                            endAngle: 90,
+                            hollow: {
+                                margin: 0,
+                                size: '70%',
+                                background: '#fff',
+                                image: undefined,
+                                imageOffsetX: 0,
+                                imageOffsetY: 0,
+                                position: 'front',
+                                dropShadow: {
+                                    enabled: true,
+                                    top: 3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.24
+                                }
+                            },
+                            track: {
+                                background: '#fff',
+                                strokeWidth: '67%',
+                                margin: 0, // margin is in pixels
+                                dropShadow: {
+                                    enabled: true,
+                                    top: -3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.35
+                                }
+                            },
+
+                            dataLabels: {
+                                show: true,
+                                name: {
+                                    fontFamily: "IRANSans",
+                                    show: true,
+                                    color: '#888',
+                                    fontSize: '10px',
+                                },
+                                value: {
+                                    formatter: function (val) {
+                                        return parseInt(val);
+                                    },
+                                    color: '#111',
+                                    fontSize: '20px',
+                                    show: true,
+                                }
+                            }
+                        }
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'dark',
+                            type: 'horizontal',
+                            shadeIntensity: 0.5,
+                            gradientToColors: ['#ABE5A1'],
+                            inverseColors: true,
+                            opacityFrom: 1,
+                            opacityTo: 1,
+                            stops: [0, 100]
+                        }
+                    },
+                    stroke: {
+                        lineCap: 'round'
+                    },
+                    labels: ['دمای بیشینه کمپوست'],
+                };
+
+                var minimumCompostHeatOptions2 = {
+                    series: [100],
+                    chart: {
+                        height: 180,
+                        type: 'radialBar',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+
+                    plotOptions: {
+                        radialBar: {
+                            startAngle: -90,
+                            endAngle: 90,
+                            hollow: {
+                                margin: 0,
+                                size: '70%',
+                                background: '#fff',
+                                image: undefined,
+                                imageOffsetX: 0,
+                                imageOffsetY: 0,
+                                position: 'front',
+                                dropShadow: {
+                                    enabled: true,
+                                    top: 3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.24
+                                }
+                            },
+                            track: {
+                                background: '#fff',
+                                strokeWidth: '67%',
+                                margin: 0, // margin is in pixels
+                                dropShadow: {
+                                    enabled: true,
+                                    top: -3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.35
+                                }
+                            },
+
+                            dataLabels: {
+                                show: true,
+                                name: {
+                                    fontFamily: "IRANSans",
+                                    show: true,
+                                    color: '#888',
+                                    fontSize: '10px',
+                                },
+                                value: {
+                                    formatter: function (val) {
+                                        return parseInt(val);
+                                    },
+                                    color: '#111',
+                                    fontSize: '20px',
+                                    show: true,
+                                }
+                            }
+                        }
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'dark',
+                            type: 'horizontal',
+                            shadeIntensity: 0.5,
+                            gradientToColors: ['#ABE5A1'],
+                            inverseColors: true,
+                            opacityFrom: 1,
+                            opacityTo: 1,
+                            stops: [0, 100]
+                        }
+                    },
+                    stroke: {
+                        lineCap: 'round'
+                    },
+                    labels: ['دمای کمینه کمپوست'],
+                };
+
+                var environmentHeatOptions2 = {
+                    series: [100],
+                    chart: {
+                        height: 180,
+                        type: 'radialBar',
+                        toolbar: {
+                            show: false
+                        }
+                    },
+
+                    plotOptions: {
+                        radialBar: {
+                            startAngle: -90,
+                            endAngle: 90,
+                            hollow: {
+                                margin: 0,
+                                size: '70%',
+                                background: '#fff',
+                                image: undefined,
+                                imageOffsetX: 0,
+                                imageOffsetY: 0,
+                                position: 'front',
+                                dropShadow: {
+                                    enabled: true,
+                                    top: 3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.24
+                                }
+                            },
+                            track: {
+                                background: '#fff',
+                                strokeWidth: '67%',
+                                margin: 0, // margin is in pixels
+                                dropShadow: {
+                                    enabled: true,
+                                    top: -3,
+                                    left: 0,
+                                    blur: 4,
+                                    opacity: 0.35
+                                }
+                            },
+
+                            dataLabels: {
+                                show: true,
+                                name: {
+                                    fontFamily: "IRANSans",
+                                    show: true,
+                                    color: '#888',
+                                    fontSize: '13px',
+                                },
+                                value: {
+                                    formatter: function (val) {
+                                        return parseInt(val);
+                                    },
+                                    color: '#111',
+                                    fontSize: '20px',
+                                    show: true,
+                                }
+                            }
+                        }
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'dark',
+                            type: 'horizontal',
+                            shadeIntensity: 0.5,
+                            gradientToColors: ['#ABE5A1'],
+                            inverseColors: true,
+                            opacityFrom: 1,
+                            opacityTo: 1,
+                            stops: [0, 100]
+                        }
+                    },
+                    stroke: {
+                        lineCap: 'round'
+                    },
+                    labels: ['دمای محیط'],
+                };
+
+                var environmentHeat2 = new ApexCharts(document.querySelector("#environmentHeat2"), environmentHeatOptions2);
+                environmentHeat2.render();
+                var maximumCompostHeatChart2 = new ApexCharts(document.querySelector("#maxCompostHeat2"), maximumCompostHeatOptions2);
+                maximumCompostHeatChart2.render();
+                var minimumCompostHeatChart2 = new ApexCharts(document.querySelector("#minCompostHeat2"), minimumCompostHeatOptions2);
+                minimumCompostHeatChart2.render();
+                var mainChart2 = new ApexCharts(document.querySelector("#mainChart2"), mainChartOptions2);
+                mainChart2.render();
+            </script>
+            <!--            پایان اسکریپت سالن ۲-->
+            <!--            پایان دایو سالن۲ -->
+        </div>
+    </section>
+</main>
+
+
+</body>
+</html>
